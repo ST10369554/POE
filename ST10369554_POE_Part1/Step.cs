@@ -8,5 +8,11 @@ namespace ST10369554_POE_Part1
 {
     internal class Step
     {
+        public string Description { get; set; }
+
+        public override string ToString()
+        {
+            return Description;
+        }
     }
 }
