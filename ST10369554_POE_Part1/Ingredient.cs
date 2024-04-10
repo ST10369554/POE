@@ -21,7 +21,12 @@ namespace ST10369554_POE_Part1
         }
         public override string ToString()
         {
-            string[]
+            string[] ingredients = new string[Names.Length];
+            for (int i = 0; i < Names.Length; i++) 
+            {
+                ingredients[i] = $"{Quantities[i]} {Units[i]} of {Names[i]}";
+            }
+            return string.Join(", ", ingredients);
         }
     }
 }
