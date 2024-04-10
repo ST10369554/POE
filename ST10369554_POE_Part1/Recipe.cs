@@ -21,5 +21,11 @@ namespace ST10369554_POE_Part1
              IngredUnit = new string[numIngredients];
              Steps = new Step[0];
         }
+        //Number of steps can be chosen by user
+        public void numOfSteps(Step step)
+        { 
+        Array.Resize(ref Steps, Steps.Length + 1);
+            Steps[Steps.Length - 1] = step;
+        }
     }
 }
