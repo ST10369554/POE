@@ -11,8 +11,15 @@ namespace ST10369554_POE_Part1
         public string[] IngredName { get; set; }
         public double[] IngredQuantity { get; set; }
         public string[] IngredUnit { get; set; }
-        public Step[] steps { get; set; }
+        public Step[] Steps { get; set; }
 
-        
+     public Recipe(int numIngredients)
+        {
+            //Storing variables
+             IngredName = new string[numIngredients];
+             IngredQuantity = new double[numIngredients];
+             IngredUnit = new string[numIngredients];
+             Steps = new Step[0];
+        }
     }
 }
