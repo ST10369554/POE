@@ -10,6 +10,11 @@ namespace ST10369554_POE_Part1
     {
         public string Description { get; set; }
 
+        public Step(string description)
+        {
+            Description = description;
+        }
+
         //overide TOstring method to display description
         public override string ToString()
         {

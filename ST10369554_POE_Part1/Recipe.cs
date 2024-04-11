@@ -11,21 +11,30 @@ namespace ST10369554_POE_Part1
         public string[] IngredName { get; set; }
         public double[] IngredQuantity { get; set; }
         public string[] IngredUnit { get; set; }
-        public Step[] Steps { get; set; }
+        public Step[] Steps { get; private set; }
+        private int stepCount;
 
-     public Recipe(int numIngredients)
+     public Recipe(int numIngredients, int maxSteps)
         {
             //Initailize array for recipe details
              IngredName = new string[numIngredients];
              IngredQuantity = new double[numIngredients];
              IngredUnit = new string[numIngredients];
-             Steps = new Step[0];
+             Steps = new Step[maxSteps];
+             stepCount = 0;
         }
         //Number of steps being added
-        public void numOfSteps(Step step)
+        public void AddStep(string description)
         { 
-        Array.Resize(ref Steps, Steps.Length + 1);
-            Steps[Steps.Length - 1] = step;
+        if (stepCount < Steps.Length)
+            {
+                Steps[stepCount] = new Step(description);
+                stepCount++;
+            }
+        else 
+            {
+                Console.WriteLine("Max number of steps reached.");
+            }
         }
         //Displaying Recipe method
         public void displayFullRecipe()
@@ -49,5 +58,19 @@ namespace ST10369554_POE_Part1
                 IngredQuantity[i] *= factor;
             }
         }
+        //Method for resetting quantities to original values
+        public void ResetQuantities()
+        {
+            //Reset to original values
+        }
+        //Clear recipe method
+        public void ClearRecipe()
+        {
+            IngredName = new string[0];
+            IngredQuantity = new double[0];
+            IngredUnit = new string[0];
+            Steps = new Step[0];
+        }
+
     }
 }
