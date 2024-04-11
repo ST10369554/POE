@@ -27,5 +27,14 @@ namespace ST10369554_POE_Part1
         Array.Resize(ref Steps, Steps.Length + 1);
             Steps[Steps.Length - 1] = step;
         }
+        //Displaying Recipe
+        public void displayFullRecipe()
+        {
+            Console.WriteLine("Ingredients");
+            for (int i = 0; 1 < IngredName.Length; i++)
+            {
+                Console.WriteLine($"{IngredQuantity[i]} {IngredUnit[i]} of {IngredName[i]}");
+            }
+        }
     }
 }
