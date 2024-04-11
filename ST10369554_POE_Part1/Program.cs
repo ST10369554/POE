@@ -20,5 +20,14 @@ class Program
             Console.WriteLine($"Enter Unit of measurement for ingredient {i + 1}:");
             recipe.IngredUnit[i] = Console.ReadLine();
         }
+        Console.WriteLine("Enter number of steps");
+        int numSteps = int.Parse(Console.ReadLine());
+
+        for (int i = 0;i < numSteps; i++) 
+        {
+        Console.WriteLine($"Enter step {i + 1}:");
+            string description = Console.ReadLine();
+            recipe.AddStep(description);
+        }
     }
 }
