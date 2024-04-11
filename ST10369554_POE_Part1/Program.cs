@@ -29,5 +29,32 @@ class Program
             string description = Console.ReadLine();
             recipe.AddStep(description);
         }
+
+        Console.WriteLine("\nRecipe entered:");
+        recipe.displayFullRecipe();
+
+        Console.WriteLine("Scale recipe to:");
+        Console.WriteLine("1. Half");
+        Console.WriteLine("2. Double");
+        Console.WriteLine("3. Triple");
+        int scaleOptions = int.Parse(Console.ReadLine());
+
+        switch (scaleOptions) 
+        {
+            case 1:
+                recipe.RecipeScale(0.5);
+                break;
+            case 2:
+                recipe.RecipeScale(2);
+                break;
+            case 3:
+                recipe.RecipeScale(3);
+                break;
+            default:
+                Console.WriteLine("Invalid option.");
+                break;
+        }
+        Console.WriteLine("\nScaled");
+        recipe.displayFullRecipe();
     }
 }
