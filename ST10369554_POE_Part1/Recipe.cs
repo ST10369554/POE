@@ -35,6 +35,19 @@ namespace ST10369554_POE_Part1
             {
                 Console.WriteLine($"{IngredQuantity[i]} {IngredUnit[i]} of {IngredName[i]}");
             }
+            Console.WriteLine("\nSteps:");
+            for (int i = 0; i < Steps.Length; i++)
+            {
+                Console.WriteLine($"{i + 1}. {Steps[i]}");
+            }
+        }
+        //Method for scaling recipe by factor
+        public void RecipeScale(double factor)
+        {
+        for (int i = 0; i < IngredQuantity.Length; i++) 
+            {
+                IngredQuantity[i] *= factor;
+            }
         }
     }
 }
