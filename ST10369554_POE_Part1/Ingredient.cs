@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ST10369554_POE_Part1
 {
-    internal class Ingredient
+     class Ingredient
     {
         public string[] Names { get; set; }
         public double[] Quantities { get; set; }

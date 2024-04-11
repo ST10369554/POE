@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ST10369554_POE_Part1
 {
-    internal class Recipe
+     class Recipe
     {
         public string[] IngredName { get; set; }
         public double[] IngredQuantity { get; set; }
@@ -14,13 +14,13 @@ namespace ST10369554_POE_Part1
         public Step[] Steps { get; private set; }
         private int stepCount;
 
-     public Recipe(int numIngredients, int maxSteps)
+     public Recipe(int numIngredients)
         {
             //Initailize array for recipe details
              IngredName = new string[numIngredients];
              IngredQuantity = new double[numIngredients];
              IngredUnit = new string[numIngredients];
-             Steps = new Step[maxSteps];
+             Steps = new Step[numIngredients];
              stepCount = 0;
         }
         //Number of steps being added
