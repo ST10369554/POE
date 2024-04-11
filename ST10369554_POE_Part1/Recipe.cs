@@ -15,19 +15,19 @@ namespace ST10369554_POE_Part1
 
      public Recipe(int numIngredients)
         {
-            //Storing variables
+            //Initailize array for recipe details
              IngredName = new string[numIngredients];
              IngredQuantity = new double[numIngredients];
              IngredUnit = new string[numIngredients];
              Steps = new Step[0];
         }
-        //Number of steps can be chosen by user
+        //Number of steps being added
         public void numOfSteps(Step step)
         { 
         Array.Resize(ref Steps, Steps.Length + 1);
             Steps[Steps.Length - 1] = step;
         }
-        //Displaying Recipe
+        //Displaying Recipe method
         public void displayFullRecipe()
         {
             Console.WriteLine("Ingredients");
