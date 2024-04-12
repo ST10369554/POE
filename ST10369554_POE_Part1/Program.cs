@@ -22,7 +22,23 @@ class Program
             Console.WriteLine($"Enter Quantity of ingredient {i + 1}:");
             recipe.IngredQuantity[i] = double.Parse(Console.ReadLine());
             Console.WriteLine($"Enter Unit of measurement for ingredient {i + 1}:");
-            recipe.IngredUnit[i] = Console.ReadLine();
+             string unit;
+
+                do
+                {
+                    unit = Console.ReadLine();
+                    if (double.TryParse(unit, out _))
+                    {
+                        Console.WriteLine("Please enter valid input");
+                    }
+                    else
+                    {
+                        recipe.IngredUnit[i] = unit;
+                    }
+
+                } while (recipe.IngredUnit[i] == null);
+
+               
         }
         Console.WriteLine("Enter number of steps");
         int numSteps = int.Parse(Console.ReadLine());

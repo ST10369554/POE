@@ -19,7 +19,7 @@ namespace ST10369554_POE_Part1
             Quantities = new double[size];
             Units = new string[size];
         }
-        //Overrise ToString method to display Ingredient details
+        //Override ToString method to display Ingredient details
         public override string ToString()
         {
             string[] ingredients = new string[Names.Length];
