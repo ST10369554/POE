@@ -6,7 +6,11 @@ class Program
 { 
     static void Main(string[] args)
     {
-        Console.WriteLine("Enter number of ingredients");
+        bool addAnotherRecipe = true;
+
+        while (addAnotherRecipe)
+        {
+            Console.WriteLine("Enter number of ingredients");
         int numIngredients = int.Parse(Console.ReadLine());
 
         Recipe recipe = new Recipe(numIngredients);
@@ -33,7 +37,7 @@ class Program
         Console.WriteLine("\nRecipe entered:");
         recipe.displayFullRecipe();
 
-        Console.WriteLine("Scale recipe to:");
+        Console.WriteLine("\nScale recipe to:");
         Console.WriteLine("1. Half");
         Console.WriteLine("2. Double");
         Console.WriteLine("3. Triple");
@@ -56,5 +60,20 @@ class Program
         }
         Console.WriteLine("\nScaled");
         recipe.displayFullRecipe();
+
+       
+
+            recipe.ClearRecipe();
+
+            Console.WriteLine("\nDo you want to enter a new recipe? (yes/no)");
+            string userInput = Console.ReadLine();
+
+            if (userInput.ToLower() != "yes")
+            {
+                addAnotherRecipe = false;
+            }
+        }
+
+        
     }
 }

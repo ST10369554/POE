@@ -40,7 +40,7 @@ namespace ST10369554_POE_Part1
         public void displayFullRecipe()
         {
             Console.WriteLine("Ingredients");
-            for (int i = 0; 1 < IngredName.Length; i++)
+            for (int i = 0; i < IngredName.Length; i++)
             {
                 Console.WriteLine($"{IngredQuantity[i]} {IngredUnit[i]} of {IngredName[i]}");
             }
@@ -59,9 +59,10 @@ namespace ST10369554_POE_Part1
             }
         }
         //Method for resetting quantities to original values
-        public void ResetQuantities()
+        public void ResetQuantities(double[] originalQuantities)
         {
             //Reset to original values
+            Array.Copy(originalQuantities,IngredQuantity, originalQuantities.Length);
         }
         //Clear recipe method
         public void ClearRecipe()
@@ -70,6 +71,7 @@ namespace ST10369554_POE_Part1
             IngredQuantity = new double[0];
             IngredUnit = new string[0];
             Steps = new Step[0];
+            stepCount = 0;
         }
 
     }
