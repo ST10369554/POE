@@ -8,20 +8,25 @@ namespace ST10369554_POE_Part1
 {
      class Recipe
     {
-        public string[] IngredName { get; set; }
-        public double[] IngredQuantity { get; set; }
-        public string[] IngredUnit { get; set; }
-        public Step[] Steps { get; private set; }
-        private int stepCount;
+        public string IngredName { get; set; }
+        public List<Ingredient> ingredients { get; set; }
+        public List<Step> steps { get; set; }
+        public delegate void ExceededRecipeCaloriesEventHandler(string recipeName, double totalCalories);
+        public event ExceededRecipeCaloriesEventHandler ExceededRecipeCalories;
+        //public double IngredQuantity { get; set; }
+       // public string IngredUnit { get; set; }
+        //public Step Steps { get; private set; }
+        //private int stepCount;
 
-     public Recipe(int numIngredients)
+     public Recipe(string ingredname)
         {
             //Initailize array for recipe details
-             IngredName = new string[numIngredients];
-             IngredQuantity = new double[numIngredients];
-             IngredUnit = new string[numIngredients];
-             Steps = new Step[numIngredients];
-             stepCount = 0;
+            IngredName = ingredname;
+             //IngredQuantity = new double[numIngredients];
+             //IngredUnit = new string[numIngredients];
+             ingredients = new List<Ingredient>();
+             steps = new List<Step>();
+             //stepCount = 0;
         }
         //Number of steps being added
         public void AddStep(string description)
