@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-namespace ST10369554_POE_Part1;
+namespace ST10369554_POE_Part2;
 
 class Program
 {
@@ -19,16 +19,12 @@ class Program
             Console.WriteLine("Enter number of ingredients");
             int numIngredients = int.Parse(Console.ReadLine());
 
-            //Recipe recipe = new Recipe(numIngredients);
-
             for (int i = 0; i < numIngredients; i++)
             {
                 Console.WriteLine($"Enter Name of ingredient {i + 1}:");
-                string names = Console.ReadLine();
-                //recipe.IngredName[i] = Console.ReadLine();
+                string names = Console.ReadLine();                
                 Console.WriteLine($"Enter Quantity of ingredient {i + 1}:");
-                double quantities = double.Parse(Console.ReadLine());
-                //recipe.IngredQuantity[i] = double.Parse(Console.ReadLine());
+                double quantities = double.Parse(Console.ReadLine());                
                 Console.WriteLine($"Enter Unit of measurement for ingredient {i + 1}:");
                 string units = Console.ReadLine();
                 Console.WriteLine($"Enter amount of calories for ingredient {i + 1}:");
@@ -37,21 +33,6 @@ class Program
                 string foodGroup = Console.ReadLine();
 
                 recipe.AddIngred(names, quantities, units, calories, foodGroup);
-
-                /* do
-                 {
-                     units = Console.ReadLine();
-                     if (double.TryParse(units, out _))
-                     {
-                         Console.WriteLine("Please enter valid input");
-                     }
-                     else
-                     {
-                         recipe.IngredUnit[i] = units;
-                     }
-
-                 } while (recipe.IngredUnit[i] == null);*/
-
 
              }
 
@@ -79,25 +60,23 @@ class Program
                  Console.WriteLine("\nRecipe entered:");
                  recipe.ShowRecipe();
 
-                 /*Console.WriteLine("\nEnter scale factor:");
+                 Console.WriteLine("\nEnter scale factor:");
                  double scaleFactor = double.Parse(Console.ReadLine());
+                 recipe.ResetQuantities();
                  recipe.RecipeScale(scaleFactor);
-                 Console.WriteLine("\nScaled");
-                 recipe.displayFullRecipe();
-
-                 double[] originalQuantities = { };
-                 double[] IngredQuantity = { };
+                 Console.WriteLine("\nScaled Recipe:");
+                 recipe.ShowRecipe();             
 
                  Console.WriteLine("\nDo you want to reset ingredient quantities to original values?");
                  string resetQuantity = Console.ReadLine().ToLower();
 
                  if (resetQuantity == "yes")
                  {
-                     if (IngredQuantity != null)
+                     if (resetQuantity != null)
                      {
-                         recipe.ResetQuantities(originalQuantities, IngredQuantity);
+                         recipe.ResetQuantities();
                          Console.WriteLine("\nIngredient quantities reset to original values:");
-                         DisplayIngredQuantities(IngredQuantity);
+                         recipe.ShowRecipe();
                      }
                      else
                      {
@@ -108,27 +87,12 @@ class Program
                  {
                      //Quantities stays the same
                      Console.WriteLine("\nIngredient quantities remain the same:");
-                     DisplayIngredQuantities(IngredQuantity);
+                     recipe.ShowRecipe();
                  }
                  else
                  {
                      Console.WriteLine("Invalid response.");
                  }
-                 //Display ingredient quantites function
-                 static void DisplayIngredQuantities(double[] IngredQuantity)
-                 {
-                     if (IngredQuantity != null)
-                     {
-                         for (int i = 0; i < IngredQuantity.Length; i++)
-                         {
-                             Console.WriteLine($"Ingredient {i + 1}: {IngredQuantity[i]}");
-                         }
-                     }
-                     else
-                     {
-                         Console.WriteLine("Error: Ingredient quantities is null.");
-                     }
-                 }*/
 
                 Console.WriteLine("\nDo you want to enter a new recipe? (yes/no)");
                 string userInput = Console.ReadLine();

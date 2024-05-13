@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ST10369554_POE_Part1
+namespace ST10369554_POE_Part2
 {
      class Step
     {
