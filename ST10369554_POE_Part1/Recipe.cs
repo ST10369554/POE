@@ -14,7 +14,7 @@ namespace ST10369554_POE_Part1
         public delegate void ExceededRecipeCaloriesEventHandler(string recipeName, double totalCalories);
         public event ExceededRecipeCaloriesEventHandler ExceededRecipeCalories;
         //public double IngredQuantity { get; set; }
-       // public string IngredUnit { get; set; }
+        public string IngredUnit { get; set; }
         //public Step Steps { get; private set; }
         //private int stepCount;
 

@@ -50,10 +50,10 @@ class Program
                          recipe.IngredUnit[i] = units;
                      }
 
-                 } while (recipe.IngredUnit[i] == null);
+                 } while (recipe.IngredUnit[i] == null);*/
 
 
-             }*/
+             }
 
                 Console.WriteLine("Enter number of steps");
                 int numSteps = int.Parse(Console.ReadLine());
@@ -76,10 +76,10 @@ class Program
                 //Check if recipe exceeds 300 calories
                 recipe.CalorieCheck();
 
-                /* Console.WriteLine("\nRecipe entered:");
+                 Console.WriteLine("\nRecipe entered:");
                  recipe.ShowRecipe();
 
-                 Console.WriteLine("\nEnter scale factor:");
+                 /*Console.WriteLine("\nEnter scale factor:");
                  double scaleFactor = double.Parse(Console.ReadLine());
                  recipe.RecipeScale(scaleFactor);
                  Console.WriteLine("\nScaled");
@@ -140,11 +140,27 @@ class Program
                 else
                 {
                     Console.Clear();
-                    continue;
                 }
             }
 
-
+        //List recipes in alphabetical order
+        Console.WriteLine("\nList of Recipe:");
+        List<Recipe> sortedRecipes = recipes.OrderBy(r => r.RecipeName).ToList();
+        for (int k = 0;k < sortedRecipes.Count;k++)
+        {
+            Console.WriteLine($"{k + 1}. {sortedRecipes[k].RecipeName}");
+        }
+        //Choose recipe to display
+        Console.WriteLine("\n Enter the recipe number to display");
+        int recipeNum = int.Parse(Console.ReadLine());
+        if (recipeNum > 0 && recipeNum <= sortedRecipes.Count)
+        {
+            Console.WriteLine("\nDisplaying recipe:");
+            sortedRecipes[recipeNum - 1].ShowRecipe();
+        }
+        else
+        {
+            Console.WriteLine("Invalid recipe number.");
+        }
         }
     }
-}
