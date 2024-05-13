@@ -8,7 +8,7 @@ namespace ST10369554_POE_Part1
 {
      class Recipe
     {
-        public string IngredName { get; set; }
+        public string RecipeName { get; set; }
         public List<Ingredient> ingredients { get; set; }
         public List<Step> steps { get; set; }
         public delegate void ExceededRecipeCaloriesEventHandler(string recipeName, double totalCalories);
@@ -18,10 +18,10 @@ namespace ST10369554_POE_Part1
         //public Step Steps { get; private set; }
         //private int stepCount;
 
-     public Recipe(string ingredname)
+     public Recipe(string recipename)
         {
             //Initailize array for recipe details
-            IngredName = ingredname;
+            RecipeName = recipename;
              //IngredQuantity = new double[numIngredients];
              //IngredUnit = new string[numIngredients];
              ingredients = new List<Ingredient>();
@@ -29,27 +29,38 @@ namespace ST10369554_POE_Part1
              //stepCount = 0;
         }
         //add ingredient to recipe
-        public void AddIngred(string ingredName, double quantities, string units, double calories, string foodGroup)
+        public void AddIngred(string RecipeName, double quantities, string units, double calories, string foodGroup)
         {
-            ingredients.Add(new Ingredient(ingredName, quantities,units, calories, foodGroup));
+            ingredients.Add(new Ingredient(RecipeName, quantities,units, calories, foodGroup));
         }
 
         public void AddStep(string description)
         { 
         steps.Add(new Step(description));
         }
-        //Displaying Recipe method
-        public void displayFullRecipe()
+
+        public double CalculateTotalCalories()
         {
-            Console.WriteLine("Ingredients");
-            for (int i = 0; i < IngredName.Length; i++)
+            double totalCalories = 0;
+            foreach (var  ingredient in ingredients)
             {
-                Console.WriteLine($"{IngredQuantity[i]} {IngredUnit[i]} of {IngredName[i]}");
+                totalCalories += ingredient.Calories * ingredient.Quantities;
             }
-            Console.WriteLine("\nSteps:");
-            for (int i = 0; i < Steps.Length; i++)
+            return totalCalories;
+        }
+        //Display Recipe
+        public void ShowRecipe()
+        {
+            Console.WriteLine($"Recipe: {RecipeName}");
+            Console.WriteLine("Ingredients:");
+            foreach (var ingredient in ingredients)
             {
-                Console.WriteLine($"{i + 1}. {Steps[i]}");
+                Console.WriteLine($"{ingredient.Quantities} {ingredient.Units} of {ingredient.Names}");
+            }
+            Console.WriteLine("Steps:");
+            for (int i = 0; i < steps.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {steps[i].Description}");
             }
         }
         //Method for scaling recipe by factor
