@@ -6,10 +6,16 @@ class Program
 { 
     static void Main(string[] args)
     {
+        List<Recipe> recipes = new List<Recipe>();
+
         bool addAnotherRecipe = true;
 
         while (addAnotherRecipe)
         {
+            Console.WriteLine("Enter recipe name:");
+            string recipeName = Console.ReadLine();
+            Recipe recipe1 = new Recipe(recipeName);
+
             Console.WriteLine("Enter number of ingredients");
             int numIngredients = int.Parse(Console.ReadLine());
 
@@ -18,11 +24,19 @@ class Program
             for (int i = 0; i < numIngredients; i++)
             {
                 Console.WriteLine($"Enter Name of ingredient {i + 1}:");
-                recipe.IngredName[i] = Console.ReadLine();
+                string names = Console.ReadLine();
+                //recipe.IngredName[i] = Console.ReadLine();
                 Console.WriteLine($"Enter Quantity of ingredient {i + 1}:");
-                recipe.IngredQuantity[i] = double.Parse(Console.ReadLine());
+                double quantities = double.Parse(Console.ReadLine());
+                //recipe.IngredQuantity[i] = double.Parse(Console.ReadLine());
                 Console.WriteLine($"Enter Unit of measurement for ingredient {i + 1}:");
-                string unit;
+                string units = Console.ReadLine();
+                Console.WriteLine($"Enter amount of calories for ingredient {i + 1}:");
+                double calories = double.Parse(Console.ReadLine());
+                Console.WriteLine($"Enter ingredient food group {i + 1}:");
+                string foodGroup = Console.ReadLine();
+
+                recipe.AddIngred(names, quantities, units, calories, foodGroup);
 
                 do
                 {

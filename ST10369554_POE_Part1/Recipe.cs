@@ -63,14 +63,24 @@ namespace ST10369554_POE_Part1
                 Console.WriteLine($"{i + 1}. {steps[i].Description}");
             }
         }
+
+        //Method checks if recipe has exceeded 300 calories is
+        public void CalorieCheck()
+        {
+            double totalCalories = CalculateTotalCalories();
+            if (totalCalories > 300 ) 
+            { 
+                ExceededRecipeCalories?.Invoke(RecipeName, totalCalories);
+            }
+        }
         //Method for scaling recipe by factor
-        public void RecipeScale(double factor)
+        /*public void RecipeScale(double factor)
         {
         for (int i = 0; i < IngredQuantity.Length; i++) 
             {
                 IngredQuantity[i] *= factor;
             }
-        }
+        }*/
         //Method for resetting quantities to original values
         public void ResetQuantities(double[] originalQuantities, double[] IngredQuantity)
         {
@@ -79,14 +89,14 @@ namespace ST10369554_POE_Part1
         }
         
         //Clear recipe method
-        public void ClearRecipe()
+      /* public void ClearRecipe()
         {
             IngredName = new string[0];
             IngredQuantity = new double[0];
             IngredUnit = new string[0];
             Steps = new Step[0];
             stepCount = 0;
-        }
+        }*/
 
     }
 }
