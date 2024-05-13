@@ -1,5 +1,5 @@
-1. Unzip the the folder "ST10369554_POE_Part1"
-2. Open the folder "ST10369554_POE_Part1"
+1. Unzip the the folder "ST10369554_POE_Part2"
+2. Open the folder "ST10369554_POE_Part2"
 3. Open the "Ingredient.cs", "Step.cs", "Recipe.cs" and "Program.cs" files using Visual studio 2022
 4. Go to the "Program.cs" file and run it
 5. The following are the commands the system will tell the user what to enter and the user must enter their 
