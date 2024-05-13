@@ -28,18 +28,15 @@ namespace ST10369554_POE_Part1
              steps = new List<Step>();
              //stepCount = 0;
         }
-        //Number of steps being added
+        //add ingredient to recipe
+        public void AddIngred(string ingredName, double quantities, string units, double calories, string foodGroup)
+        {
+            ingredients.Add(new Ingredient(ingredName, quantities,units, calories, foodGroup));
+        }
+
         public void AddStep(string description)
         { 
-        if (stepCount < Steps.Length)
-            {
-                Steps[stepCount] = new Step(description);
-                stepCount++;
-            }
-        else 
-            {
-                Console.WriteLine("Max number of steps reached.");
-            }
+        steps.Add(new Step(description));
         }
         //Displaying Recipe method
         public void displayFullRecipe()
