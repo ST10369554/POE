@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ST10369554_POE_Part2
 {
-     class Step
+     public class Step
     {
         public string Description { get; set; }
 

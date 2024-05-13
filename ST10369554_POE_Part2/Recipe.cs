@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ST10369554_POE_Part2
 {
-     class Recipe
+     public class Recipe
     {
         public string RecipeName { get; set; }
         public List<Ingredient> ingredients { get; set; }
