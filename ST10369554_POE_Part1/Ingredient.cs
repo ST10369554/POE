@@ -8,18 +8,23 @@ namespace ST10369554_POE_Part1
 {
      class Ingredient
     {
-        public string[] Names { get; set; }
-        public double[] Quantities { get; set; }
-        public string[] Units { get; set; }
+        public string Names { get; set; }
+        public double Quantities { get; set; }
+        public string Units { get; set; }
+        public double Calories { get; set; }
+        public string FoodGroup { get; set; }
 
-        public Ingredient(int size)
+
+        public Ingredient(string names, double quantites, string units, double calories, string foodGroup)
         {
-            //Initialize arrays for Ingredient detials
-            Names = new string[size];
-            Quantities = new double[size];
-            Units = new string[size];
+            //Initialize for Ingredient detials
+            Names = names;
+            Quantities = quantites;
+            Units = units;
+            Calories = calories;
+            FoodGroup = foodGroup;
         }
-        //Override ToString method to display Ingredient details
+        /*Override ToString method to display Ingredient details
         public override string ToString()
         {
             string[] ingredients = new string[Names.Length];
@@ -28,6 +33,6 @@ namespace ST10369554_POE_Part1
                 ingredients[i] = $"{Quantities[i]} {Units[i]} of {Names[i]}";
             }
             return string.Join(", ", ingredients);
-        }
+        }*/
     }
 }

@@ -59,11 +59,12 @@ namespace ST10369554_POE_Part1
             }
         }
         //Method for resetting quantities to original values
-        public void ResetQuantities(double[] originalQuantities)
+        public void ResetQuantities(double[] originalQuantities, double[] IngredQuantity)
         {
             //Reset to original values
             Array.Copy(originalQuantities,IngredQuantity, originalQuantities.Length);
         }
+        
         //Clear recipe method
         public void ClearRecipe()
         {
