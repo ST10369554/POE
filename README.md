@@ -1,42 +1,40 @@
-1. Unzip the the folder "ST10369554_POE_Part2"
-2. Open the folder "ST10369554_POE_Part2"
-3. Open the "Ingredient.cs", "Step.cs", "Recipe.cs" and "Program.cs" files using Visual studio 2022
-4. Go to the "Program.cs" file and run it
-5. The following are the commands the system will tell the user what to enter and the user must enter their 
-input under each command.
+1. Unzip the the folder "ST10369554_POE"
+2. Open the folder "ST10369554_POE"
+3. Open the "Ingredient.cs", "Step.cs", "Recipe.cs", "MainWindow.xaml", "MainWindow.xaml.cs", "IngredientWindow.xaml", "IngredientWindow.xaml.cs", 
+ "StepWindow.xaml" and "StepWindow.xaml.cs" files using Visual studio 2022
+4. Run it
+5. The following are the buttons and a textblock the system will display and tell the user what to enter and the user must enter their 
+input:
 
--Enter recipe name
+-Recipe name(textblock)
 
--Enter number of ingredients
+-Save Recipe
 
--Enter name of ingredient
+-Add Ingredient
+When clicking the Add Ingredient button, it displays the ingredient window where you enter the ingredient
+name, quantity, unit, calories and food group.
 
--Enter unit of measurement for ingredient
+-Add Step
+When clicking the Add Step button, it displays step window where you add your steps. If you want to add
+another step you click it again
 
--Enter amount of calories for ingredient
+A Recipe filters heading with the following filtering features under it:
 
--Enter ingredient food group
+-Ingredient Name
 
--Enter number of steps
+-Food Group
 
--Enter step 1 (can be 2,3,4 or more, depending on how many you want)
+-Maximum Calories(Slider)
+The amount of calories increase as the more you slide it to the right.
 
-After entering the steps the system will notify you if the recipe calories exceed 300. If it does it will display:
+-Apply filters (button)
 
--Warning: Recipe 'entered recipe name' has 'calculated calories' calories. It exceeds 300 calories
+After are the other buttons and a textblock:
 
-Then it will show the recipe, ingredients and steps
+-Show Recipe
 
-Then it displays "Enter scale factor". You enter any number you want to scale the ingredients to.
+-Scale Factor(textblock)
 
-After that the system will display the scaled recipe then ask you "Do you want to reset ingredient quantities to original value?" 
-you type yes or no
-then the system will display the recipe scaled or not depending on your answer.
+-Scale Recipe
 
-The system will ask if you want to enter a new recipe.
-If yes, it clears all the data and starts over and you enter a new recipe name and so on. 
-If no, it displays a recipe list of all the recipes you entered in alphbetical order
-
-
-The system will say "Enter recipe number to display". you type the index number the recipe is on
-then it shows the details you entered of that recipe then the system closes.
+-ResetQuantites
